@@ -1,0 +1,85 @@
+{
+  "brand": "MEDIBRIDGE",
+  "tagline": "Healthcare Without Language Barriers",
+  "nav": {
+    "home": "Home",
+    "findDoctors": "Find Doctors",
+    "consultSpecialities": "Consult Specialities",
+    "dashboard": "Dashboard",
+    "about": "About",
+    "login": "Login",
+    "signUp": "Sign Up",
+    "logout": "Logout",
+    "profile": "Profile"
+  },
+  "hero": {
+    "heading": "Healthcare Without Language Barriers",
+    "description": "Find the right doctor, book an appointment, and communicate comfortably in your preferred language.",
+    "findDoctorBtn": "Find a Doctor",
+    "consultNowBtn": "Consult Now"
+  },
+  "quickActions": {
+    "nearYouTitle": "Find Doctors Near You",
+    "nearYouDesc": "Search doctors, clinics and hospitals based on your location.",
+    "nearYouBtn": "Find Doctors",
+    "instantTitle": "Instant Video Consultation",
+    "instantDesc": "Connect with an available doctor through a secure online consultation.",
+    "instantBtn": "Consult Now"
+  },
+  "concerns": {
+    "title": "Consult a Doctor Online",
+    "subtitle": "Select a symptom or health concern to connect with specialized physicians.",
+    "skin": { "title": "Skin Problems", "desc": "Rashes, itching, and common skin concerns." },
+    "cold": { "title": "Cold & Cough", "desc": "Sore throat, persistent cough, and flu symptoms." },
+    "fever": { "title": "Fever", "desc": "High body temperature, chills, and weakness." },
+    "headache": { "title": "Headache", "desc": "Migraines, cluster headaches, and dizziness." },
+    "stomach": { "title": "Stomach Pain", "desc": "Indigestion, abdominal cramps, and acidity." },
+    "allergies": { "title": "Allergies", "desc": "Food allergies, respiratory reactions, and hives." }
+  },
+  "specialities": {
+    "title": "Consult by Speciality",
+    "subtitle": "Explore registered medical experts across primary and secondary disciplines.",
+    "cardiology": "Cardiology",
+    "dermatology": "Dermatology",
+    "dentistry": "Dentistry",
+    "gynecology": "Gynecology",
+    "neurology": "Neurology",
+    "orthopedics": "Orthopedics",
+    "pediatrics": "Pediatrics",
+    "generalPhysician": "General Physician",
+    "nutrition": "Nutrition",
+    "doctorsCount": "{{count}} Doctors available",
+    "noDoctors": "No doctors are available in this speciality yet."
+  },
+  "inClinic": {
+    "title": "Book an Appointment",
+    "subtitle": "Book an appointment for an in-clinic consultation.",
+    "selectSpeciality": "Select Speciality",
+    "selectDoctor": "Select Doctor",
+    "selectDate": "Select Date",
+    "selectSlot": "Select Time Slot",
+    "confirmBtn": "Confirm Appointment"
+  },
+  "about": {
+    "title": "About MEDIBRIDGE",
+    "desc": "MEDIBRIDGE helps patients connect with doctors and communicate comfortably across language barriers through online and in-clinic healthcare services.",
+    "howItWorks": "How MEDIBRIDGE Works",
+    "step1Title": "Find a Doctor",
+    "step1Desc": "Search verified doctors by speciality, spoken language, location, and consultation mode.",
+    "step2Title": "Book an Appointment",
+    "step2Desc": "Reserve real in-clinic time slots or enter live video consultation sessions immediately.",
+    "step3Title": "Join Consultation",
+    "step3Desc": "Engage via secure two-way video and audio directly in your browser with real media streams.",
+    "step4Title": "Communicate Comfortably",
+    "step4Desc": "Request an available live interpreter whenever patient and doctor speak different languages."
+  },
+  "footer": {
+    "disclaimer": "MEDIBRIDGE is not intended for medical emergencies. If you are experiencing a life-threatening medical emergency, please contact your local emergency services immediately.",
+    "links": "Quick Links",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact",
+    "copyright": "© 2026 MEDIBRIDGE. All rights reserved."
+  }
+}
