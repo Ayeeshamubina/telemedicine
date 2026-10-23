@@ -38,6 +38,15 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({
+    status: 'online',
+    platform: 'MEDIBRIDGE Telemedicine Backend Server',
+    message: 'Backend is active and ready for WebRTC, Socket.IO, and Live Translation.'
+  });
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({
@@ -65,10 +74,12 @@ const PORT = process.env.PORT || 5000;
 
 server.listen(PORT, () => {
   console.log(`[MEDIBRIDGE Server] Running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
-  // Start dual-protocol HTTP/HTTPS port multiplexer for mobile browser camera/mic permissions
-  try {
-    require('./dualProxy');
-  } catch (proxyErr) {
-    console.warn('[DualProxy Warning]', proxyErr.message);
+  // Start dual-protocol HTTP/HTTPS port multiplexer for mobile browser camera/mic permissions in local dev
+  if (process.env.NODE_ENV !== 'production' && !process.env.RENDER) {
+    try {
+      require('./dualProxy');
+    } catch (proxyErr) {
+      console.warn('[DualProxy Warning]', proxyErr.message);
+    }
   }
 });

@@ -17,8 +17,9 @@ export const SocketProvider = ({ children }) => {
   }, [user, socket]);
 
   useEffect(() => {
-    // In production or Vite proxy, connect to root or specific URL
-    const newSocket = io(window.location.origin, {
+    // In production (Vercel) connect to Render backend URL; locally fallback to window.location.origin
+    const backendUrl = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '') || window.location.origin;
+    const newSocket = io(backendUrl, {
       transports: ['websocket', 'polling'],
       reconnectionAttempts: 10,
       reconnectionDelay: 1000
