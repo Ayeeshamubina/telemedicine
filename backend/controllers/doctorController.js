@@ -1,11 +1,21 @@
+const mongoose = require('mongoose');
 const DoctorProfile = require('../models/DoctorProfile');
 const User = require('../models/User');
+const { inMemoryDoctors } = require('../utils/inMemoryStore');
 
 // @desc    Get all registered doctors with filters
 // @route   GET /api/doctors
 // @access  Public
 const getDoctors = async (req, res, next) => {
   try {
+    if (mongoose.connection.readyState !== 1) {
+      return res.json({
+        success: true,
+        count: inMemoryDoctors.length,
+        data: inMemoryDoctors
+      });
+    }
+
     const { speciality, location, language, mode, search } = req.query;
 
     let query = { isApproved: true };
@@ -66,6 +76,11 @@ const getDoctors = async (req, res, next) => {
 // @access  Public
 const getDoctorById = async (req, res, next) => {
   try {
+    if (mongoose.connection.readyState !== 1) {
+      const doc = (inMemoryDoctors || []).find(d => d._id === req.params.id || d.user?._id === req.params.id) || inMemoryDoctors[0];
+      return res.json({ success: true, data: doc });
+    }
+
     const doctorProfile = await DoctorProfile.findById(req.params.id)
       .populate('user', 'name email phone location preferredLanguage');
 

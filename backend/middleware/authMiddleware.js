@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
 const User = require('../models/User');
+const { inMemoryUsers } = require('../utils/inMemoryStore');
 
 const protect = async (req, res, next) => {
   let token;
@@ -24,6 +26,12 @@ const protect = async (req, res, next) => {
           role: 'admin',
           status: 'active'
         };
+        return next();
+      }
+
+      if (mongoose.connection.readyState !== 1) {
+        const memUser = (inMemoryUsers || []).find((u) => u._id === decoded.id || u.id === decoded.id);
+        req.user = memUser || { _id: decoded.id, role: decoded.role, status: 'active' };
         return next();
       }
 
